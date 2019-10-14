@@ -1,5 +1,12 @@
 import * as React from 'react';
-import {Image, View, StyleSheet, Text, TouchableOpacity, FlatList} from 'react-native';
+import {
+  Image,
+  View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  FlatList,
+} from 'react-native';
 import {useState} from 'react';
 import ListRow from './ListRow';
 import {capitalize} from '../../Utility';
@@ -27,12 +34,32 @@ function MainScreen({navigation}) {
   return (
     <View style={styles.root}>
       <View style={styles.topTabContainer}>
-        <TouchableOpacity style={[styles.tab, tab === 'list' ? styles.selectedTab : null]} onPress={onListPress}>
-          <Text style={[styles.tabTitle, tab === 'list' ? styles.selectedTabTitle : null]}>List</Text>
+        <TouchableOpacity
+          style={[styles.tab, tab === 'list' ? styles.selectedTab : null]}
+          onPress={onListPress}
+        >
+          <Text
+            style={[
+              styles.tabTitle,
+              tab === 'list' ? styles.selectedTabTitle : null,
+            ]}
+          >
+            List
+          </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.tab, tab === 'grid' ? styles.selectedTab : null]} onPress={onGridPress}>
-          <Text style={[styles.tabTitle, tab === 'grid' ? styles.selectedTabTitle : null]}>Grid</Text>
+        <TouchableOpacity
+          style={[styles.tab, tab === 'grid' ? styles.selectedTab : null]}
+          onPress={onGridPress}
+        >
+          <Text
+            style={[
+              styles.tabTitle,
+              tab === 'grid' ? styles.selectedTabTitle : null,
+            ]}
+          >
+            Grid
+          </Text>
         </TouchableOpacity>
       </View>
       <FlatList
@@ -85,6 +112,7 @@ MainScreen.navigationOptions = {
     backgroundColor: '#323232',
     elevation: 0,
     shadowOpacity: 0,
+    borderBottomWidth: 0,
   },
 };
 

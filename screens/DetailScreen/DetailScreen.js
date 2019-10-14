@@ -18,8 +18,8 @@ function DetailScreen({navigation}) {
         />
       </View>
       <View style={styles.typeContainer}>
-        {pokemon.types.map(function(item) {
-          return <TypePill name={capitalize(item.type.name)} />;
+        {pokemon.types.map(function(item, index) {
+          return <TypePill key={index} name={capitalize(item.type.name)} />;
         })}
       </View>
       <View style={styles.measureContainer}>
@@ -44,6 +44,7 @@ DetailScreen.navigationOptions = function({navigation}) {
       backgroundColor: '#323232',
       elevation: 0,
       shadowOpacity: 0,
+      borderBottomWidth: 0,
     },
     headerTitleStyle: {
       color: '#ffffff',

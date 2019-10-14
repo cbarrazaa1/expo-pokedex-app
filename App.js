@@ -3,6 +3,7 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import MainScreen from './screens/MainScreen/MainScreen';
 import DetailScreen from './screens/DetailScreen/DetailScreen';
+import {StatusBar} from 'react-native';
 
 const AppNavigator = createStackNavigator({
   MainScreen: {
@@ -16,7 +17,12 @@ const AppNavigator = createStackNavigator({
 const AppContainer = createAppContainer(AppNavigator);
 
 function App() {
-  return <AppContainer />;
+  return (
+    <>
+      <StatusBar barStyle="light-content" />
+      <AppContainer />
+    </>
+  );
 }
 
 export default App;
